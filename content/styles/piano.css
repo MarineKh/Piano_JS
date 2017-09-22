@@ -1,0 +1,366 @@
+/*-------------------GLOBAL-------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body, main {
+    width: 100%;
+    height:100%;
+}
+main {
+    margin-top: 50px;
+}
+
+/*-------------------Piano-------------------*/
+
+.container {
+    width: 1215px;
+    height: 303px;
+
+    border-radius: 12px;
+
+    background-image: linear-gradient(#454545 -10px,#000 200px);
+    margin: auto;
+    padding: 0 10px 10px 10px;
+}
+
+piano {
+    position: absolute;
+
+    white-space: nowrap;
+}
+octave {
+    position: relative;
+
+    display: inline-block;
+}
+
+/*-------------------KEYBOARD-------------------*/
+
+white-key,
+white-key:hover,
+white-key:active {
+    width: 25px;
+    height: 173px;
+
+    background-size: contain;
+    display: inline-block;
+
+    margin-right: 2px;
+}
+white-key {
+    background-image: url("../imgs/PianoKey/white_key.png");
+}
+white-key:hover {
+    background-image: url("../imgs/PianoKey/white_hover.png");
+}
+white-key:active {
+    background-image: url("../imgs/PianoKey/white_activated.png");
+}
+black-key,
+black-key:hover,
+black-key:active {
+    width: 18px;
+    height: 120px;
+
+    position: absolute;
+
+    background-size: contain;
+    display: inline-block;
+}
+black-key {
+    background-image: url("../imgs/PianoKey/black_key.png");
+}
+black-key:hover {
+    background-image: url("../imgs/PianoKey/black_hover.png");
+}
+black-key:active {
+     background-image: url("../imgs/PianoKey/black_activated.png");
+}
+octave:nth-of-type(1) {
+    width: 55px;
+}
+octave:nth-of-type(9) {
+    width: 25px;
+}
+black-key:nth-of-type(1) {
+    left: 15px;
+}
+black-key:nth-of-type(2) {
+    left: 45px;
+}
+black-key:nth-of-type(3) {
+    left: 98px;
+}
+black-key:nth-of-type(4) {
+    left: 125px;
+}
+black-key:nth-of-type(5) {
+    left: 150px;
+}
+
+piano.hoverWhite white-key {
+    background-image: url("../imgs/PianoKey/white_assist_key.png");
+}
+piano.hoverWhite white-key:hover {
+    background-image: url("../imgs/PianoKey/white_assist_hover.png");
+}
+piano.hoverBlack black-key {
+    background-image: url("../imgs/PianoKey/black_assist_key.png");
+}
+piano.hoverBlack black-key:hover {
+    background-image: url("../imgs/PianoKey/black_assist_hover.png");
+}
+.keyboardKeyWhite {
+    position: relative;
+    top: 143px;
+    left: 7px;
+
+    display: inline-block;
+
+    font-size: 16px;
+}
+.keyboardKeyBlack {
+    font-size: 16px;
+    color: #fff;
+
+    position: relative;
+    top: 27px;
+    left: 5px;
+
+    display: inline-block;
+}
+.keyboardKeyWhite.hidden,
+.keyboardKeyBlack.hidden {
+    display: none;
+}
+.activeWhite {
+    background-image: url("../imgs/PianoKey/white_activated.png");
+}
+.activeBlack {
+    background-image: url("../imgs/PianoKey/black_activated.png");
+}
+
+/*-------------------MENU-------------------*/
+
+.menu {
+    width: 400px;
+    height: 100px;
+
+    background-color: #000;
+    background-image: linear-gradient(#292929 2%, black 10%, #212121 50%, black 90%, #292929 99%) !important;
+
+    border: 2px solid #000;
+    margin: auto;
+}
+.headerDiv {
+    width: 100%;
+    height: 133px;
+
+    position: relative;
+
+    margin: auto;
+
+    display: flex;
+}
+.leftDinamic {
+    height: 110px;
+    width: 345px;
+
+    position: absolute;
+    top: 20px;
+    left: 5px;
+
+    background-image: url(../imgs/Unused/grid1.png);
+
+    margin: auto;
+}
+.leftDinamic::after,
+.leftDinamic:hover::after {
+    height: 134px;
+    width: 412px;
+
+    position: absolute;
+    top: 16px;
+    left: 105px;
+
+    content: "";
+
+    display: inline-block;
+
+    margin-left: 9px;
+}
+.leftDinamic::after {
+    background: url(../imgs/Unused/logo.png) no-repeat;
+}
+.leftDinamic:hover::after {
+    background: url(../imgs/Unused/logo_selected.png) no-repeat;
+}
+.rightDinamic {
+    height: 110px;
+    width: 345px;
+
+    position: absolute;
+    top: 20px;
+    right: 5px;
+
+    background-image: url(../imgs/Unused/grid1.png);
+
+    margin: auto;
+}
+.menuBar {
+    height: 100px;
+    width: 500px;
+
+    position: relative;
+
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#101010), color-stop(38%,#222222), color-stop(100%,#101010));
+
+    border-radius: 15px;
+    margin: auto;
+}
+.frontDiv {
+    width: 100%;
+    height: 70%;
+}
+.playDiv {
+    width: 50%;
+    height: 100%;
+
+    display: inline-table;
+}
+.playButtonSpan{
+    color: #f98133;
+    font-family: monospace;
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 0 0 6px #fb6e11;
+    vertical-align: middle;
+
+    display: table-cell;
+}
+.keyDiv {
+    width: 50%;
+
+    float: right;
+}
+.keySpanTop {
+    font-size: 24px;
+    color: #f98133;
+    line-height: 40px;
+    text-align: center;
+    text-shadow: 0 0 6px #fb6e11;
+
+    display: block;
+}
+.keySpanBottom {
+    font-size: 15px;
+    color: #f98133;
+    font-family: monospace;
+    text-align: center;
+    text-shadow: 0 0 6px #fb6e11;
+    display: block;
+    padding-top: 10px;
+}
+.horizontal {
+    width: 90%;
+
+    position: absolute;
+    top: 72px;
+    left: 25px;
+
+    border: 1px solid #fb6e11;
+}
+.vertical {
+    width: 11%;
+
+    position: absolute;
+    top: 35px;
+    left: 210px;
+
+    border: 1px solid #fb6e11;
+
+    transform: rotate(90deg);
+}
+.tabPiano {
+    text-align: center;
+
+    overflow: hidden;
+
+    margin-top: 8px;
+}
+.btn {
+    cursor: pointer;
+    color: #ff8322;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px #ff8322;
+
+    background-color: inherit;
+
+    border: none;
+    outline: none;
+    padding: 1px 16px;
+
+    transition: 0.3s;
+}
+.btn:hover {
+    color: white;
+}
+.btn.active {
+    color: rgba(255, 255, 255, .07);
+
+    background-color: transparent;
+}
+.backDiv {
+    width: 100%;
+    height: 70%;
+
+    display: none;
+}
+.musicSheet,
+.keyAssist,
+.styles,
+.about {
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px #ff8322;
+    text-decoration: none;
+
+    outline: none;
+}
+.musicSheet:hover,
+.keyAssist:hover,
+.styles:hover,
+.about:hover {
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ff8322;
+    text-shadow: 0 0 8px #ff8322;
+    text-decoration: none;
+
+    outline: none;
+}
+.keyAssist,
+.styles,
+.about {
+    display: inline-block;
+}
+.musicSheet {
+    display: inline-block;
+
+    margin: 10px 50px 0 110px;
+}
+.styles {
+    padding: 22px 0 0 132px;
+}
+.about {
+    padding-left: 115px;
+}
